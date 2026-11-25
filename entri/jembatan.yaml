@@ -1,0 +1,11 @@
+id: jembatan
+jenis: kata
+indonesia: [jembatan]
+jawa:
+  ngoko: [kreteg]
+pekalongan:
+  - kata: bruk
+    wilayah: [kota-pekalongan, kabupaten-pekalongan, batang, pemalang]
+    ragam: netral
+status: usulan
+sumber: penutur
