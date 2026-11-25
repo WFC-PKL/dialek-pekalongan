@@ -1,7 +1,7 @@
 import { fileURLToPath } from "node:url"
-import { bacaKamus } from "./kamus.mjs"
+import { bacaDialek } from "./dialek.mjs"
 
-const { entri, masalah } = bacaKamus(fileURLToPath(new URL("../entri/", import.meta.url)))
+const { entri, masalah } = bacaDialek(fileURLToPath(new URL("../entri/", import.meta.url)))
 if (masalah.length) {
   console.error(masalah.join("\n"))
   process.exit(1)

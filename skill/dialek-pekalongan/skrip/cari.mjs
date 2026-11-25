@@ -42,7 +42,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     console.error("Pakai: node cari.mjs <kata> [--arah indonesia|jawa|pekalongan]")
     process.exit(2)
   }
-  const kamus = JSON.parse(readFileSync(new URL("../data/kamus.json", import.meta.url), "utf8"))
+  const kamus = JSON.parse(readFileSync(new URL("../data/dialek.json", import.meta.url), "utf8"))
   const hasil = cari(kamus, args.join(" "), { arah })
   console.log(hasil.length ? JSON.stringify(hasil, null, 1) : "Tidak ditemukan di kamus.")
 }

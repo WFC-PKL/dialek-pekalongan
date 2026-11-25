@@ -78,6 +78,10 @@ export function periksaEntri(e, namaBerkas) {
   tiap(e.pekalongan, "pekalongan", (p, di) => {
     kunci(p, ["kata", "variasi", "lafal", "wilayah", "ragam", "catatan"], di)
     teks(p.kata, `${di}.kata`)
+    // Cakupan: hanya yang berbeda dari Jawa umum.
+    const ngoko = Array.isArray(e.jawa?.ngoko) ? e.jawa.ngoko : []
+    const sama = (n) => typeof n === "string" && typeof p.kata === "string" && n.toLowerCase() === p.kata.toLowerCase()
+    if (ngoko.some(sama) && p.lafal === undefined && p.catatan === undefined) m.push(`${di}.kata: sama dengan Jawa ngoko, isi lafal atau catatan untuk menjelaskan bedanya`)
     daftar(p.variasi, `${di}.variasi`)
     for (const k of ["lafal", "catatan"]) if (p[k] !== undefined) teks(p[k], `${di}.${k}`)
     if (!Array.isArray(p.wilayah) || !p.wilayah.length) m.push(`${di}.wilayah: harus daftar berisi minimal satu`)
@@ -105,7 +109,7 @@ export function periksaEntri(e, namaBerkas) {
   return m
 }
 
-export function bacaKamus(folder) {
+export function bacaDialek(folder) {
   const entri = []
   const masalah = []
   const pernah = new Map()

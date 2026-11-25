@@ -1,9 +1,11 @@
 ---
-name: kamus-pekalongan
-description: Kamus bahasa Indonesia, Jawa umum, dan Jawa dialek Pekalongan. Pakai saat diminta menerjemahkan ke atau dari bahasa Pekalongan, menjelaskan kata atau logat Pekalongan, atau menulis dengan logat Pekalongan.
+name: dialek-pekalongan
+description: Kamus dialek Jawa Pekalongan dengan padanan Indonesia dan Jawa umum. Pakai saat diminta menerjemahkan ke atau dari bahasa Pekalongan, menjelaskan kata atau logat Pekalongan, atau menulis dengan logat Pekalongan.
 ---
 
-# Kamus Pekalongan
+# Dialek Pekalongan
+
+Kamus ini hanya memuat yang berbeda dari Jawa umum, jadi banyak kata sehari-hari memang tidak ada di sini.
 
 Cari setiap kata yang diperlukan sebelum menjawab (jalankan dari folder skill ini):
 
@@ -14,7 +16,7 @@ Cari setiap kata yang diperlukan sebelum menjawab (jalankan dari folder skill in
 
 Aturan:
 
-1. **Jangan mengarang kata Pekalongan.** Kata yang tidak ada di kamus ditulis dalam Jawa ngoko umum, lalu sebutkan bahwa itu bukan dari kamus.
+1. **Jangan mengarang kata Pekalongan.** Kata yang tidak ada di kamus ditulis dalam Jawa ngoko umum. Jangan menyebutnya khas Pekalongan. Bila ditanya, katakan kata itu belum tercatat di kamus.
 2. Pilih kata yang `ragam`-nya `netral`, atau `akrab` bila suasananya santai. Kata `kasar` hanya dijelaskan bila ditanya, tidak dipakai menulis.
 3. Perhatikan `wilayah`. Bila pilihan berbeda antarwilayah, sebutkan wilayahnya.
 4. Pilih entri menurut makna, bukan hanya bentuk katanya. Pakai `contoh` dan `penjelasan`.

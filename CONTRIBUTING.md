@@ -1,5 +1,14 @@
 # Cara Berkontribusi
 
+## Apa yang masuk
+
+- Kata yang bentuk, makna, atau lafalnya berbeda dari Jawa umum.
+- Partikel, seruan, dan ungkapan khas Pekalongan.
+
+Kata yang sama persis dengan Jawa umum **tidak** dimasukkan. Bila ejaannya sama tetapi lafal atau pemakaiannya berbeda, isi `lafal` atau `catatan` untuk menjelaskan bedanya.
+
+## Cara mengusulkan
+
 Tidak paham Git? Buka **Issues → New issue → Usul kata**, lalu isi formnya. Pengelola yang membuatkan berkasnya.
 
 Paham Git? Salin kerangka ini ke `entri/<id>.yaml`, lalu buka Pull Request. `id` sebaiknya kata Indonesia-nya, ditambah angka atau keterangan bila sudah dipakai.
