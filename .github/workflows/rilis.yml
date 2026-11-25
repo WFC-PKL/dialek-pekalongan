@@ -1,0 +1,33 @@
+# Memperbarui rilis "terbaru" (kamus.json dan skill) setiap kali main berubah.
+name: Rilis
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency: rilis
+
+jobs:
+  rilis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run bangun
+      - run: cd skill && zip -r ../dist/skill-kamus-pekalongan.zip kamus-pekalongan
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release view terbaru >/dev/null 2>&1 || gh release create terbaru --title "Kamus terbaru" --notes "Dibangun otomatis dari main."
+          gh release upload terbaru dist/kamus.json dist/skill-kamus-pekalongan.zip --clobber

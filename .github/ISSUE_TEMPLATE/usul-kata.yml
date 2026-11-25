@@ -1,0 +1,40 @@
+name: Usul kata
+description: Usulkan satu kata, partikel, atau ungkapan Pekalongan
+title: "Usul kata: "
+body:
+  - type: markdown
+    attributes:
+      value: Satu usulan untuk satu makna. Jangan tulis data pribadi. Dengan mengirim, kamu setuju isinya dilisensikan CC BY-SA 4.0.
+  - type: dropdown
+    id: jenis
+    attributes: { label: Jenis, options: [kata, partikel, ungkapan] }
+    validations: { required: true }
+  - type: input
+    id: pekalongan
+    attributes: { label: Bahasa Pekalongan, description: "Sertakan ejaan lain bila ada." }
+    validations: { required: true }
+  - type: input
+    id: indonesia
+    attributes: { label: Arti bahasa Indonesia, description: "Untuk partikel, jelaskan rasa atau fungsinya." }
+    validations: { required: true }
+  - type: input
+    id: jawa
+    attributes: { label: Jawa umum (ngoko), description: "Boleh dikosongkan bila tidak tahu. Krama boleh ditambahkan." }
+  - type: dropdown
+    id: wilayah
+    attributes:
+      label: Dipakai di mana
+      multiple: true
+      options: [kota-pekalongan, kabupaten-pekalongan, batang, pemalang]
+    validations: { required: true }
+  - type: dropdown
+    id: ragam
+    attributes: { label: Ragam, options: [netral, akrab, kasar] }
+    validations: { required: true }
+  - type: textarea
+    id: contoh
+    attributes: { label: Contoh kalimat dan artinya }
+  - type: input
+    id: sumber
+    attributes: { label: Sumber, description: "Penutur asli (kamu sendiri atau keluarga), atau judul pustaka." }
+    validations: { required: true }

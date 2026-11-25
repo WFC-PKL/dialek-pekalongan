@@ -1,0 +1,4 @@
+node_modules/
+dist/
+skill/kamus-pekalongan/data/
+.DS_Store
