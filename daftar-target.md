@@ -1,6 +1,6 @@
-# 100 Kata Pertama
+# 100 Makna Pemancing
 
-Daftar makna untuk sesi pengumpulan bersama penutur asli. Tanyakan: "Kalau di daerahmu, ini apa?" Catat wilayah, ragam, dan contoh kalimat.
+Daftar makna untuk sesi pengumpulan bersama penutur asli. Tanyakan: "Kalau di daerahmu, ini apa?" Catat **hanya yang berbeda dari Jawa umum**, lengkap dengan wilayah, ragam, dan contoh kalimat.
 
 Partikel, seruan, dan ungkapan khas dicatat terpisah selama sesi.
 

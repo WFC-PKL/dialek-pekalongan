@@ -4,8 +4,8 @@ import { mkdtempSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import test from "node:test"
-import { cari } from "../skill/kamus-pekalongan/skrip/cari.mjs"
-import { bacaKamus, periksaEntri, susun } from "../skrip/kamus.mjs"
+import { cari } from "../skill/dialek-pekalongan/skrip/cari.mjs"
+import { bacaDialek, periksaEntri, susun } from "../skrip/dialek.mjs"
 
 const contoh = (ubah = {}) => ({
   id: "uji", jenis: "kata", indonesia: ["artiuji"], jawa: { ngoko: ["ngokouji"] },
@@ -33,16 +33,21 @@ test("partikel butuh penjelasan, bukan padanan", () => {
   salah(p, /penjelasan/)
   assert.deepEqual(periksaEntri(contoh({ ...p, penjelasan: "penegas" }), "uji.yaml"), [])
 })
+test("kata yang sama dengan ngoko butuh penjelasan beda", () => {
+  const p = { kata: "NgokoUji", wilayah: ["batang"], ragam: "netral" }
+  salah({ pekalongan: [p] }, /sama dengan Jawa ngoko/)
+  assert.deepEqual(periksaEntri(contoh({ pekalongan: [{ ...p, lafal: "beda" }] }), "uji.yaml"), [])
+})
 test("pustaka butuh rujukan", () => salah({ sumber: "pustaka" }, /rujukan/))
 test("terverifikasi butuh dua orang berbeda", () => {
   salah({ status: "terverifikasi", verifikasi: [dua[0], dua[0]] }, /dua penutur/)
   assert.deepEqual(periksaEntri(contoh({ status: "terverifikasi", verifikasi: dua }), "uji.yaml"), [])
 })
 test("duplikat dan YAML rusak dilaporkan", () => {
-  const d = mkdtempSync(join(tmpdir(), "kamus-"))
+  const d = mkdtempSync(join(tmpdir(), "dialek-"))
   for (const id of ["satu", "dua"]) writeFileSync(join(d, `${id}.yaml`), JSON.stringify(contoh({ id })))
   writeFileSync(join(d, "rusak.yaml"), "a: [")
-  const { masalah } = bacaKamus(d)
+  const { masalah } = bacaDialek(d)
   assert.match(masalah.join("\n"), /duplikat/)
   assert.match(masalah.join("\n"), /rusak\.yaml: YAML/)
 })

@@ -4,7 +4,7 @@ title: "Usul kata: "
 body:
   - type: markdown
     attributes:
-      value: Satu usulan untuk satu makna. Jangan tulis data pribadi. Dengan mengirim, kamu setuju isinya dilisensikan CC BY-SA 4.0.
+      value: Hanya kata yang bentuk, makna, atau lafalnya berbeda dari Jawa umum, atau partikel dan ungkapan khas. Satu usulan untuk satu makna. Jangan tulis data pribadi. Dengan mengirim, kamu setuju isinya dilisensikan CC BY-SA 4.0.
   - type: dropdown
     id: jenis
     attributes: { label: Jenis, options: [kata, partikel, ungkapan] }
@@ -31,6 +31,9 @@ body:
     id: ragam
     attributes: { label: Ragam, options: [netral, akrab, kasar] }
     validations: { required: true }
+  - type: input
+    id: beda
+    attributes: { label: Bedanya dari Jawa umum, description: "Isi bila ejaannya sama, misalnya beda lafal atau pemakaian." }
   - type: textarea
     id: contoh
     attributes: { label: Contoh kalimat dan artinya }

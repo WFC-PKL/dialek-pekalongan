@@ -1,4 +1,4 @@
-# Memperbarui rilis "terbaru" (kamus.json dan skill) setiap kali main berubah.
+# Memperbarui rilis "terbaru" (dialek.json dan skill) setiap kali main berubah.
 name: Rilis
 
 on:
@@ -24,10 +24,10 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm test
       - run: npm run bangun
-      - run: cd skill && zip -r ../dist/skill-kamus-pekalongan.zip kamus-pekalongan
+      - run: cd skill && zip -r ../dist/skill-dialek-pekalongan.zip dialek-pekalongan
       - env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          gh release view terbaru >/dev/null 2>&1 || gh release create terbaru --title "Kamus terbaru" --notes "Dibangun otomatis dari main."
-          gh release upload terbaru dist/kamus.json dist/skill-kamus-pekalongan.zip --clobber
+          gh release view terbaru >/dev/null 2>&1 || gh release create terbaru --title "Data terbaru" --notes "Dibangun otomatis dari main."
+          gh release upload terbaru dist/dialek.json dist/skill-dialek-pekalongan.zip --clobber
