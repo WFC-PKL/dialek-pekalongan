@@ -1,0 +1,11 @@
+id: gayung
+jenis: kata
+indonesia: [gayung]
+jawa:
+  ngoko: [siwur]
+pekalongan:
+  - kata: cibuk
+    wilayah: [kota-pekalongan, kabupaten-pekalongan, batang, pemalang]
+    ragam: netral
+status: usulan
+sumber: penutur

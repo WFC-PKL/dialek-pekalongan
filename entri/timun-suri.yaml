@@ -1,0 +1,11 @@
+id: timun-suri
+jenis: kata
+indonesia: [timun suri]
+jawa:
+  ngoko: [timun suri]
+pekalongan:
+  - kata: barteh
+    wilayah: [kota-pekalongan, kabupaten-pekalongan, batang, pemalang]
+    ragam: netral
+status: usulan
+sumber: penutur
